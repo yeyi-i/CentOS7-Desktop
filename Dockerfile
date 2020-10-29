@@ -2,6 +2,7 @@ FROM centos:7
 MAINTAINER chrichen
 #RUN rm -rf /etc/yum.repos.d/*.repo
 #ADD CentOS-Base.repo /etc/yum.repos.d
+RUN ln -s /usr/share/zoneinfo/Hongkong /etc/localtime
 RUN yum update
 RUN yum makecache
 RUN yum install -y git && yum clean all
