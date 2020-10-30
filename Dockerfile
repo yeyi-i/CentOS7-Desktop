@@ -1,4 +1,4 @@
-FROM centos:7
+FROM yeyiyi/centos7-systemd:latest
 MAINTAINER chrichen
 USER 0
 ADD init.sh /opt/
