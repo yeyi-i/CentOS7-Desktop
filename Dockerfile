@@ -1,7 +1,7 @@
 FROM centos:7
 MAINTAINER chrichen
 USER 0
-RUN ADD init.sh /opt/
+ADD init.sh /opt/
 RUN chmod +x /opt/init.sh
 #RUN rm -rf /etc/yum.repos.d/*.repo
 #ADD CentOS-Base.repo /etc/yum.repos.d
