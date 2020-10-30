@@ -1,6 +1,6 @@
 FROM yeyiyi/centos7-systemd:latest
 MAINTAINER chrichen
-USER 0
+USER root
 ADD init.sh /opt/
 RUN chmod +x /opt/init.sh
 #RUN rm -rf /etc/yum.repos.d/*.repo
@@ -15,7 +15,5 @@ RUN cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.s
 RUN sed -i 's/\/home\/<USER>/\/root/g' /etc/systemd/system/vncserver@:1.service
 RUN sed -i 's/<USER>/root/g' /etc/systemd/system/vncserver@:1.service
 RUN sed -i 's/800x600/1920x1080/g' /usr/bin/vncserver
-EXPOSE 5901 5902 5903 5904 5905 5906 5907 5908 5909 5910
 VOLUME [ "/sys/fs/cgroup" ]
-ENTRYPOINT ["/usr/sbin/init"]
 CMD ["/home/init.sh"]
