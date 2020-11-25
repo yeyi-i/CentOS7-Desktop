@@ -1,7 +1,9 @@
 FROM centos:7
 MAINTAINER chrichen
-RUN rm -rf /etc/yum.repos.d/*.repo
-ADD CentOS-Base.repo /etc/yum.repos.d
+
+## Prevent dockerhub pull the mirror from alibaba
+#RUN rm -rf /etc/yum.repos.d/*.repo
+#ADD CentOS-Base.repo /etc/yum.repos.d
 RUN yum install -y git && yum clean all
 RUN yum install -y wget && yum clean all
 
