@@ -10,7 +10,6 @@ RUN wget -qO- https://dl.bintray.com/tigervnc/stable/tigervnc-1.8.0.x86_64.tar.g
 
 RUN yum install -y deltarpm
 RUN yum groupinstall -y "GNOME Desktop" "Graphical Administration Tools"
-RUN startx
 RUN systemctl set-default graphical.target
 RUN cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service
 
